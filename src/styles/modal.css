@@ -1,0 +1,166 @@
+/* Modal animations */
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+  background-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.ReactModal__Content {
+  transform: scale(0.95) translateY(-20px);
+  transition: transform 200ms ease-in-out;
+  background: white !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.ReactModal__Content--after-open {
+  transform: scale(1) translateY(0);
+}
+
+.ReactModal__Content--before-close {
+  transform: scale(0.95) translateY(20px);
+}
+
+/* Modal base styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  border-radius: 0.5rem;
+  outline: none;
+  margin: 2rem;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Settings modal specific styles */
+.settings-modal {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-modal-body {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+}
+
+.settings-sidebar {
+  width: 16rem;
+  flex-shrink: 0;
+  border-right: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  overflow-y: auto;
+}
+
+.settings-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.settings-footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem;
+  background: white;
+}
+
+/* Cost breakdown modal specific styles */
+.cost-breakdown-modal {
+  background: white;
+}
+
+.cost-breakdown-modal .modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cost-breakdown-modal .modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  max-height: calc(90vh - 10rem);
+}
+
+.cost-breakdown-modal .modal-footer {
+  padding: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  background: white;
+}
+
+.cost-breakdown-modal .tab-panel {
+  background: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.cost-breakdown-modal .cost-section {
+  background: #f9fafb;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.cost-breakdown-modal .cost-section-header {
+  padding: 1rem;
+  background: #f3f4f6;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cost-breakdown-modal .cost-section-body {
+  padding: 1rem;
+}
+
+.cost-breakdown-modal .cost-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.cost-breakdown-modal .cost-total {
+  background: #1f2937;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .settings-modal-body {
+    flex-direction: column;
+  }
+  
+  .settings-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .modal-content {
+    margin: 1rem;
+    width: calc(100% - 2rem);
+  }
+}
